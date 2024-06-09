@@ -20,7 +20,7 @@ const Chatroom = () => {
       navigate('/');
 
      }
-     const newSocket = io('http://localhost:5001');
+     const newSocket = io('https://chatroom-api.vercel.app');
      setSocket(newSocket);
   
         newSocket.on('connect',()=>{
