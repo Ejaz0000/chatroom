@@ -20,7 +20,7 @@ const Chatroom = () => {
       navigate('/');
 
      }
-     const newSocket = io('https://chatroom-api.vercel.app');
+     const newSocket = io('https://chatroom-backend-sj3x.onrender.com');
      setSocket(newSocket);
   
         newSocket.on('connect',()=>{
