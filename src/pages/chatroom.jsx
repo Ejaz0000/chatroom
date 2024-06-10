@@ -50,7 +50,7 @@ const Chatroom = () => {
     e.preventDefault();
     setMessages(prevMessages => [...prevMessages, message]);
     socket.emit('chatMessage',message);
-    setMessage("")
+    setMessage({user:name, message:""})
    }
   return (
     <div className='flex flex-col pt-[50px]  lg:px-[200px] justify-center lg:items-center'>
