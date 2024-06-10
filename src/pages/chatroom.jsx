@@ -53,7 +53,7 @@ const Chatroom = () => {
     setMessage("")
    }
   return (
-    <div className='flex flex-col pt-[50px] px-[200px] justify-center items-center'>
+    <div className='flex flex-col pt-[50px]  lg:px-[200px] justify-center lg:items-center'>
       <div className='text-center'>
         <h1 className='text-white text-4xl mb-[30px]'>{heading}</h1>
         <h1 className='text-gray-500 text-2xl mt-2 mb-[20px]'>Hi <span className='text-gray-300'>{name}</span>! you are in Room:<span className='text-gray-300'>{room}</span></h1>
@@ -61,7 +61,7 @@ const Chatroom = () => {
       <div className="flex flex-col lg:flex-row">
 
 
-      <div className="bg-gray-600 lg:h-[400px] py-3 px-2  rounded-md">
+      <div className="bg-gray-600  lg:h-[400px] py-3 px-2  rounded-md">
        <h3 className="border-b-2 hidden lg:block">Total Members: <span className="text-green-300 font-bold">{noOfuser.length}</span></h3>
        
        <div className=' flex flex-row lg:flex-col'>
@@ -74,7 +74,7 @@ const Chatroom = () => {
        </div>
       </div>
       <div className='flex flex-col items-center'>
-      <div className='h-[450px] pt-[50px] w-[345px] lg:w-[550px] overflow-y-scroll'>
+      <div className='h-[450px] pt-[50px] w-[350px] lg:w-[550px] overflow-x-hidden overflow-y-scroll'>
         {messages && messages.map((msg,index)=>(
         <div key={index}>
           {msg.user === "server" ? (
@@ -99,10 +99,10 @@ const Chatroom = () => {
           
         ))}
       </div>
-      <div>
+      <div className='mb-4 mt-2'>
         <form onSubmit={handleSend}>
-          <div className=" flex">
-            <input className='py-1 px-2' onChange={(e)=>setMessage({user:name, message:e.target.value})} value={message.message} />
+          <div className=" flex justify-center">
+            <input className='py-1 px-2 w-[90%]' onChange={(e)=>setMessage({user:name, message:e.target.value})} value={message.message} />
             <button type='submit' className='bg-cyan-900 px-2 py-1'>Send</button>
           </div>
         </form>
